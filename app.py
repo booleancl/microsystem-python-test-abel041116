@@ -2,7 +2,22 @@
 
 print("welcom to your horoscope")
 
+def lucky_color(color):
+    options = ["Azul","Amarillo","rojo","Lila","Rosa","Morado"]
+    option = random.choice(options)
+    print("Tu color de la suerte es:", option)
+    time.sleep(3)
+
+def read_file(name):
+    file_name = "signs/" + name 
+    file = open(file_name, "r")
+    for line in file:
+        print(line)
+    time.sleep(3)
+
+
 def menu():
+    print("##############################")
     print("que signo desea consultar")
     print("eligue tu opcion")
     print("1", "aries")
@@ -18,11 +33,6 @@ def menu():
     print("11", "aquarius")
     print("12", "pisces")
     print("exit",)
-
-def read_file(prediccion):
-   file = open("signs/"+ prediccion,'r')
-   for line in file:
-     print(line)
 
 user_input = ""
 
@@ -54,6 +64,8 @@ while user_input !="exit":
         read_file("aquarius.txt")
     elif user_input == "12":
         read_file("pisces.txt")
+    elif user_input == "13":
+        lucky_color()
     elif user_input == "exit":
         print("goodbye")
         exit()
